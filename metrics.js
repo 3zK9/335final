@@ -18,7 +18,7 @@ const uri = `mongodb+srv://${userName}:${password}@cluster0.lw1rpii.mongodb.net/
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 client.connect().then(
-    res => console.log("\nServer Connected >:)"),
+    res => app.listen(portNumber),    
     err => console.error("ERROR Connecting"),
 );
 
@@ -26,10 +26,10 @@ const app = express();
 
 process.stdin.setEncoding("utf8");
 
-if (process.argv.length != 3) {
-    process.stdout.write(`Usage Example: metrics.js portNumber\n`);
-    process.exit(1);
-}
+//if (process.argv.length != 3) {
+//    process.stdout.write(`Usage Example: metrics.js portNumber\n`);
+//    process.exit(1);
+//}
 
 app.use(bodyparser.urlencoded({extended:false}));
 
@@ -94,7 +94,6 @@ app.post("/newuser", async (request, response) => {
     response.render("index");
 });
 
-app.listen(portNumber);
 
 const prompt = "Type this command to shutdown the server: STOP:\t";
 process.stdout.write(prompt);
