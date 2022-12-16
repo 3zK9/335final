@@ -1,0 +1,47 @@
+<!--New User-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>New User</title>
+    </head>
+
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+        }
+        
+        .login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        fieldset {
+            display: inline;
+        }
+    </style>
+
+    <body>
+        <div class="login">  
+            <form method="post">
+                <fieldset>
+                    <legend>Email Address</legend>
+                    <input type="email" name="email" placeholder="email@email.com">
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Password</legend>
+                    <input type="password" name="password" placeholder="something secure...">
+                </fieldset>
+                <br>
+                <br>
+                <input type="reset"/>           
+                <input type="submit" value="Create Account"/>
+            </form>
+        </div>
+    </body>
+</html>
